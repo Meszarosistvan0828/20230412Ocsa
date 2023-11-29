@@ -111,3 +111,13 @@ button:hover
 body{
     background-image: url(jobbvagyok.jfif);
 }
+
+.szamostema
+{
+    border: 5px solid white;
+}
+
+.nyertestema
+{
+    border: 5px solid gold;
+}

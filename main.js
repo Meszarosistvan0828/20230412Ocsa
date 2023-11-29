@@ -181,13 +181,16 @@ idozito2=setInterval(() => {
     idozito = setInterval(()=>{
         let poz = Math.floor(Math.random()*szamsor.length);
         nyeremeny = szamsor[poz];
-        document.getElementById("slot").innerHTML = '<img src=porgetszam/'+nyeremeny+'.png>';
+        document.getElementById("slot").innerHTML = '<img class="szamostema" src=porgetszam/'+nyeremeny+'.png>';
         meddigmenjen--;
         console.log(meddigmenjen)
 
         if (meddigmenjen == 0)
         {
-            clearInterval(idozito)
+            
+        document.getElementById("slot").innerHTML = '<img class="nyertestema" src=porgetszam/'+nyeremeny+'.png>';
+        document.getElementById("sz"+nyeremeny).style.background = "gold"
+        clearInterval(idozito)
            
         }
        
