@@ -139,26 +139,56 @@ function Katt(x)
     else
     {
         alert("Elfogyott az egyenleg")
-        egyenleg =0
+        egyenleg=0
     }
     } 
 var szamsor = ["0","32","15","19","4","21","2","25","17","34","6","27","13","36","11","30","8","23","10","5","24","16","33","1","20","14","31","9","22","18","29","7","28","12","35","3","26"]
 var nyerszam = []
-var s = document.getElementById("asd123").innerHTML
-var nullalett = 0;
-function general()
-{
-    for(var i = 0;i<5;i++)
-    {
-        document.getElementById("porgo"+i).innerHTML = "<img src='"+szamsor[i]+".png' class='porgoszamok'>"    
-    }
-}
 
+var nullalett = 0;
+var meddigmenjen = 0;
+var nyeremeny = 0;
+var idozito = null;
+var idozito2 = null;
 function Porgetes()
 {
-    general()
+    meddigmenjen = Math.floor(Math.random()*30)+10;
+    console.log(tet)
+idozito2=setInterval(() => {
+    if(meddigmenjen == 0)
+    {
+        if(tet[nyeremeny]==0)
+        {
+            alert("anyereménye lófasz se")
+        }
+        else if(tet[nyeremeny]>=0)
+        {
+            setTimeout(()=> {alert("a nyereménye:"+tet[parseInt(nyeremeny)]*36)
+            egyenleg+= tet[parseInt(nyeremeny)]*36},5000)
+        }
+        document.getElementById("egyenleg").innerHTML = egyenleg
+        clearInterval(idozito2)
+        
+        console.log(egyenleg)
+    }
     
+}, 100);
+    idozito = setInterval(()=>{
+        let poz = Math.floor(Math.random()*szamsor.length);
+        nyeremeny = szamsor[poz];
+        document.getElementById("slot").innerHTML = '<img src='+nyeremeny+'.png>';
+        meddigmenjen--;
+        console.log(meddigmenjen)
+
+        if (meddigmenjen == 0)
+        {
+            clearInterval(idozito)
+           
+        }
+       
+    },100)
 }
+
 
 
 
