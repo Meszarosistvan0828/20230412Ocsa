@@ -181,7 +181,7 @@ idozito2=setInterval(() => {
     idozito = setInterval(()=>{
         let poz = Math.floor(Math.random()*szamsor.length);
         nyeremeny = szamsor[poz];
-        document.getElementById("slot").innerHTML = '<img src='+nyeremeny+'.png>';
+        document.getElementById("slot").innerHTML = nyeremeny;
         meddigmenjen--;
         console.log(meddigmenjen)
 
@@ -191,7 +191,7 @@ idozito2=setInterval(() => {
            
         }
        
-    },100)
+    },75)
 }
 
 
