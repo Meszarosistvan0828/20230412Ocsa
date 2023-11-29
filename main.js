@@ -1,8 +1,13 @@
+
 var tét = 1000
 var katt = 0;
 var nulatet = 0
 var egyenleg = 10000
 
+function betolto()
+{
+    document.getElementsByTagName("body").style.display = "none";
+}
 document.getElementById("egyenleg").innerHTML = egyenleg
 
 function tétlevesz()
@@ -100,21 +105,21 @@ function Katt(x)
         
         if(tét==20)
         {
-            document.getElementById("sz"+x).innerHTML = "<img src='20coin.pwng' class='coin'>"
+            document.getElementById("sz"+x).innerHTML = "<img src='tétcoin/csin20.png' class='coin'>"
             tet[x]+=20
             egyenleg-=20
             document.getElementById("egyenleg").innerHTML = egyenleg
         }
         else if(tét==50)
         {
-            document.getElementById("sz"+x).innerHTML = "<img src='50coin.png' class='coin'>"
+            document.getElementById("sz"+x).innerHTML = "<img src='tétcoin/csin50.png' class='coin'>"
             tet[x]+=50
             egyenleg-=50
             document.getElementById("egyenleg").innerHTML = egyenleg   
         }
         else if(tét==100)
         {
-            document.getElementById("sz"+x).innerHTML = "<img src='100coin.png' class='coin'>"
+            document.getElementById("sz"+x).innerHTML = "<img src='tétcoin/csin100.png' class='coin'>"
             tet[x]+=100
             egyenleg-=100
             document.getElementById("egyenleg").innerHTML = egyenleg   
@@ -122,14 +127,14 @@ function Katt(x)
         }
         else if(tét==250)
         {
-            document.getElementById("sz"+x).innerHTML = "<img src='250coin.png' class='coin'>"
+            document.getElementById("sz"+x).innerHTML = "<img src='tétcoin/csin250.png' class='coin'>"
             tet[x]+=250
             egyenleg-=250   
             document.getElementById("egyenleg").innerHTML = egyenleg   
         }
         else if(tét==500)
         {
-            document.getElementById("sz"+x).innerHTML = "<img src='500coin.png' class='coin'>"
+            document.getElementById("sz"+x).innerHTML = "<img src='tétcoin/csin500.png' class='coin'>"
             tet[x]+=500
             egyenleg-=500
             document.getElementById("egyenleg").innerHTML = egyenleg   
@@ -152,7 +157,7 @@ var idozito = null;
 var idozito2 = null;
 function Porgetes()
 {
-    meddigmenjen = Math.floor(Math.random()*30)+10;
+    meddigmenjen = Math.floor(Math.random()*50)+10;
     console.log(tet)
 idozito2=setInterval(() => {
     if(meddigmenjen == 0)
@@ -164,7 +169,7 @@ idozito2=setInterval(() => {
         else if(tet[nyeremeny]>=0)
         {
             setTimeout(()=> {alert("a nyereménye:"+tet[parseInt(nyeremeny)]*36)
-            egyenleg+= tet[parseInt(nyeremeny)]*36},5000)
+            egyenleg+= tet[parseInt(nyeremeny)]*36},500)
         }
         document.getElementById("egyenleg").innerHTML = egyenleg
         clearInterval(idozito2)
@@ -207,4 +212,4 @@ idozito2=setInterval(() => {
     //else
    // {
       //  document.getElementById("asd123").innerHTML += "<div class='col-md-1 fekete'>"+szamsor[kezdoszam]+"</div>"
-    //}
+    //} 
