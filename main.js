@@ -5,10 +5,10 @@ var nulatet = 0
 var egyenleg = 10000
 
 function betolto()
-{
-    document.getElementsByTagName("body").style.display = "none";
+{ egyenlegfrissito = setInterval(() => {
+        document.getElementById("egyenleg").innerHTML = egyenleg
+    }, 10);
 }
-document.getElementById("egyenleg").innerHTML = egyenleg
 
 function tétlevesz()
 {
@@ -84,7 +84,7 @@ function tét500()
     document.getElementById("gomb250").style.backgroundColor = "white"
     document.getElementById("gomb500").style.backgroundColor = "yellowgreen"
 }
-tet = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+tet = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 function Katt(x)
 {   
@@ -95,6 +95,19 @@ function Katt(x)
         if(tét==0)
         {
             document.getElementById("sz"+x).innerHTML = x
+            if(x==37)
+            {
+                document.getElementById("sz37").innerHTML ="1st 12"
+            }
+            if(x==38)
+            {
+                document.getElementById("sz38").innerHTML ="2st 12"
+            }
+            if(x==39)
+            {
+                document.getElementById("sz38").innerHTML ="3st 12"
+            }
+
             egyenleg+=tet[x]
             tet[x]=0
             document.getElementById("egyenleg").innerHTML = egyenleg
@@ -147,6 +160,13 @@ function Katt(x)
         egyenleg=0
     }
     } 
+zsalma=[1,2,3]
+tet2=[0,0,0]
+function st(zsalma)
+{
+
+}
+
 var szamsor = ["0","32","15","19","4","21","2","25","17","34","6","27","13","36","11","30","8","23","10","5","24","16","33","1","20","14","31","9","22","18","29","7","28","12","35","3","26"]
 var nyerszam = []
 
@@ -155,11 +175,15 @@ var meddigmenjen = 0;
 var nyeremeny = 0;
 var idozito = null;
 var idozito2 = null;
+elozotakaritas = 0;
 function Porgetes()
 {
+
+    document.getElementById("porgeto").innerHTML = ""
+    document.getElementById("sz"+nyeremeny).style.border = "1px solid white"
+
     meddigmenjen = Math.floor(Math.random()*50)+10;
-    console.log(tet)
-idozito2=setInterval(() => {
+    idozito2=setInterval(() => {
     if(meddigmenjen == 0)
     {
         if(tet[nyeremeny]==0)
@@ -170,6 +194,45 @@ idozito2=setInterval(() => {
         {
             setTimeout(()=> {alert("a nyereménye:"+tet[parseInt(nyeremeny)]*36)
             egyenleg+= tet[parseInt(nyeremeny)]*36},500)
+        }
+
+        if(nyeremeny>0 && nyeremeny<13)
+        {
+            egyenleg+=tet[37]*3
+        }
+        
+        if(nyeremeny>12 && nyeremeny<25)
+        {
+            egyenleg+=tet[38]*3
+        }
+
+        if(nyeremeny>24 && nyeremeny<37)
+        {
+            egyenleg+=tet[39]*3
+        }
+
+
+
+
+
+
+
+        for (var i = 0; i < 40; i++) 
+        {   
+                document.getElementById("sz"+i).innerHTML = i    
+                tet[i]=0
+                if(i==37)
+                {
+                    document.getElementById("sz37").innerHTML ="1st 12"
+                }
+                if(i==38)
+                {
+                    document.getElementById("sz38").innerHTML ="2st 12"
+                }
+                if(i==39)
+                {
+                    document.getElementById("sz39").innerHTML ="3st 12"
+                }
         }
         document.getElementById("egyenleg").innerHTML = egyenleg
         clearInterval(idozito2)
@@ -186,15 +249,18 @@ idozito2=setInterval(() => {
         console.log(meddigmenjen)
 
         if (meddigmenjen == 0)
-        {
-            
+        {   
         document.getElementById("slot").innerHTML = '<img class="nyertestema" src=porgetszam/'+nyeremeny+'.png>';
-        document.getElementById("sz"+nyeremeny).style.background = "gold"
+        document.getElementById("sz"+nyeremeny).style.border= "5px solid gold"
         clearInterval(idozito)
-           
+        document.getElementById("porgeto").innerHTML = "<button onclick='Porgetes()'>Pörgetés</button>"
+        
+      
         }
        
     },100)
+    nyeremeny=elozotakaritas
+
 }
 
 
