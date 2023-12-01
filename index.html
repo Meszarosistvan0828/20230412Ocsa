@@ -8,114 +8,150 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="betolto()">
-    <div class="kozep">
-        <span id="winner" class="feher"></span>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-10">
+
+            <div class="kozep">
+
+                <br>
+                <h2 class="feher">TÉT</h2>
+
+                <br>
+                <h2 class="feher">Egyenleg</h2>
+
+                <br>    
+
+            </div>
+            <table>
+                <tr>
+                    <td rowspan="4" class="zero" id="sz0" onclick="Katt(0)">0</td>
+                </tr>
+                <tr>
+                    <td class="fekete" id="sz3" onclick="Katt(3)">3</td>
+                    <td class="piros" id="sz6" onclick="Katt(6)">6</td>
+                    <td class="fekete" id="sz9" onclick="Katt(9)">9</td>
+                    <td class="piros" id="sz12" onclick="Katt(12)">12</td>
+                    <td class="fekete" id="sz15" onclick="Katt(15)">15</td>
+                    <td class="piros" id="sz18" onclick="Katt(18)">18</td>
+                    <td class="fekete" id="sz21" onclick="Katt(21)">21</td>
+                    <td class="piros" id="sz24" onclick="Katt(24)">24</td>
+                    <td class="fekete" id="sz27" onclick="Katt(27)">27</td>
+                    <td class="piros" id="sz30" onclick="Katt(30)">30</td>
+                    <td class="fekete" id="sz33" onclick="Katt(33)">33</td>
+                    <td class="piros" id="sz36" onclick="Katt(36)">36</td>
+                </tr>
+                <tr>
+                    <td class="piros" id="sz2" onclick="Katt(2)">2</td>
+                    <td class="fekete" id="sz5" onclick="Katt(5)">5</td>
+                    <td class="piros" id="sz8" onclick="Katt(8)">8</td>
+                    <td class="fekete" id="sz11" onclick="Katt(11)">11</td>
+                    <td class="piros" id="sz14" onclick="Katt(14)">14</td>
+                    <td class="fekete" id="sz17" onclick="Katt(17)">17</td>
+                    <td class="piros" id="sz20" onclick="Katt(20)">20</td>
+                    <td class="fekete" id="sz23" onclick="Katt(23)">23</td>
+                    <td class="piros" id="sz26" onclick="Katt(26)">26</td>
+                    <td class="fekete" id="sz29" onclick="Katt(29)">29</td>
+                    <td class="piros" id="sz32" onclick="Katt(32)">32</td>
+                    <td class="fekete" id="sz35" onclick="Katt(35)">35</td>
+                </tr>
+                <tr>
+                    <td class="fekete" id="sz1" onclick="Katt(1)">1</td>
+                    <td class="piros" id="sz4"  onclick="Katt(4)">4</td>
+                    <td class="fekete" id="sz7" onclick="Katt(7)">7</td>
+                    <td class="piros" id="sz10" onclick="Katt(10)">10</td>
+                    <td class="fekete" id="sz13" onclick="Katt(13)">13</td>
+                    <td class="piros" id="sz16" onclick="Katt(16)">16</td>
+                    <td class="fekete" id="sz19" onclick="Katt(19)">19</td>
+                    <td class="piros" id="sz22" onclick="Katt(22)">22</td>
+                    <td class="fekete" id="sz25" onclick="Katt(25)">25</td>
+                    <td class="piros" id="sz28" onclick="Katt(28)">28</td>
+                    <td class="fekete" id="sz31" onclick="Katt(31)">31</td>
+                    <td class="piros" id="sz34" onclick="Katt(34)">34</td>
+                </tr>
+                <tr>
+                    <td class="ürestd">
+        
+                    </td>
+                    <td colspan="4" class="betu" id="sz37"onclick="Katt(37)">
+                        1st 12
+                    </td>
+                    <td colspan="4" class="betu" id="sz38"onclick="Katt(38)">
+                        2st 12
+                    </td>
+                    <td colspan="4" class="betu" id="sz39"onclick="Katt(39)">
+                        3st 12
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ürestd">
+        
+                    </td>
+                    <td colspan="2" class="betu" id="sz40"onclick="Katt(40)">
+                        1-18
+                    </td>
+                    <td colspan="2" class="betu" id="sz41" onclick="Katt(41)">
+                        Even
+                    </td>
+                    <td colspan="2" class="betu piros" id="sz42" onclick="Katt(42)">
+                        
+                    </td>
+                    <td colspan="2" class="betu fekete" id="sz43" onclick="Katt(43)">
+                        
+                    </td>
+                    <td colspan="2"class="betu" id="sz44" onclick="Katt(44)">
+                        Odd
+                    </td>
+                    <td colspan="2"class="betu" id="sz45" onclick="Katt(45)">
+                        19-36
+                    </td>
+                </tr>
+            </table>
+        
+        
+            <center>
+                <br>
+            <div id="porgeto"><button onclick="Porgetes()">Porgetes</button></div>
         <br>
-        <h2 class="feher">TÉT</h2>
-        <button onclick="tétlevesz()" id="levesz">X</button>
-        <button onclick="tét20()" id="gomb20">20</button>
-        <button onclick="tét50()" id="gomb50">50</button>
-        <button onclick="tét100()" id="gomb100">100</button>
-        <button onclick="tét250()" id="gomb250">250</button>
-        <button onclick="tét500()" id="gomb500">500</button>
-        <br>
-        <h2 class="feher">Egyenleg</h2>
-        <span class="feher" id="egyenleg"></span>
-        <br>    
-        <span id="ossztet"></span>
+            <div id="slot"></div>    
+            </center>
+        </div>
+
+
+
+
+        <div class="col-md-1">
+        </div>
     </div>
-    <table>
-        <tr>
-            <td rowspan="4" class="zero" id="sz0" onclick="Katt(0)">0</td>
-        </tr>
-        <tr>
-            <td class="fekete" id="sz3" onclick="Katt(3)">3</td>
-            <td class="piros" id="sz6" onclick="Katt(6)">6</td>
-            <td class="fekete" id="sz9" onclick="Katt(9)">9</td>
-            <td class="piros" id="sz12" onclick="Katt(12)">12</td>
-            <td class="fekete" id="sz15" onclick="Katt(15)">15</td>
-            <td class="piros" id="sz18" onclick="Katt(18)">18</td>
-            <td class="fekete" id="sz21" onclick="Katt(21)">21</td>
-            <td class="piros" id="sz24" onclick="Katt(24)">24</td>
-            <td class="fekete" id="sz27" onclick="Katt(27)">27</td>
-            <td class="piros" id="sz30" onclick="Katt(30)">30</td>
-            <td class="fekete" id="sz33" onclick="Katt(33)">33</td>
-            <td class="piros" id="sz36" onclick="Katt(36)">36</td>
-        </tr>
-        <tr>
-            <td class="piros" id="sz2" onclick="Katt(2)">2</td>
-            <td class="fekete" id="sz5" onclick="Katt(5)">5</td>
-            <td class="piros" id="sz8" onclick="Katt(8)">8</td>
-            <td class="fekete" id="sz11" onclick="Katt(11)">11</td>
-            <td class="piros" id="sz14" onclick="Katt(14)">14</td>
-            <td class="fekete" id="sz17" onclick="Katt(17)">17</td>
-            <td class="piros" id="sz20" onclick="Katt(20)">20</td>
-            <td class="fekete" id="sz23" onclick="Katt(23)">23</td>
-            <td class="piros" id="sz26" onclick="Katt(26)">26</td>
-            <td class="fekete" id="sz29" onclick="Katt(29)">29</td>
-            <td class="piros" id="sz32" onclick="Katt(32)">32</td>
-            <td class="fekete" id="sz35" onclick="Katt(35)">35</td>
-        </tr>
-        <tr>
-            <td class="fekete" id="sz1" onclick="Katt(1)">1</td>
-            <td class="piros" id="sz4"  onclick="Katt(4)">4</td>
-            <td class="fekete" id="sz7" onclick="Katt(7)">7</td>
-            <td class="piros" id="sz10" onclick="Katt(10)">10</td>
-            <td class="fekete" id="sz13" onclick="Katt(13)">13</td>
-            <td class="piros" id="sz16" onclick="Katt(16)">16</td>
-            <td class="fekete" id="sz19" onclick="Katt(19)">19</td>
-            <td class="piros" id="sz22" onclick="Katt(22)">22</td>
-            <td class="fekete" id="sz25" onclick="Katt(25)">25</td>
-            <td class="piros" id="sz28" onclick="Katt(28)">28</td>
-            <td class="fekete" id="sz31" onclick="Katt(31)">31</td>
-            <td class="piros" id="sz34" onclick="Katt(34)">34</td>
-        </tr>
-        <tr>
-            <td class="ürestd">
+</div>
 
-            </td>
-            <td colspan="4" class="betu" id="sz37"onclick="Katt(37)">
-                1st 12
-            </td>
-            <td colspan="4" class="betu" id="sz38"onclick="Katt(38)">
-                2st 12
-            </td>
-            <td colspan="4" class="betu" id="sz39"onclick="Katt(39)">
-                3st 12
-            </td>
-        </tr>
-        <tr>
-            <td class="ürestd">
-
-            </td>
-            <td colspan="2" class="betu" id="sz40"onclick="Katt(40)">
-                1-18
-            </td>
-            <td colspan="2" class="betu" id="sz41" onclick="Katt(41)">
-                Even
-            </td>
-            <td colspan="2" class="betu piros" id="sz42" onclick="Katt(42)">
-                
-            </td>
-            <td colspan="2" class="betu fekete" id="sz43" onclick="Katt(43)">
-                
-            </td>
-            <td colspan="2"class="betu" id="sz44" onclick="Katt(44)">
-                Odd
-            </td>
-            <td colspan="2"class="betu" id="sz45" onclick="Katt(45)">
-                19-36
-            </td>
-        </tr>
-    </table>
-
+<center>
+    <button onclick="tétlevesz()" id="levesz" class="gombika">X</button>
+    <button onclick="tét20()" id="gomb20" class="gombika">20</button>
+    <button onclick="tét50()" id="gomb50" class="gombika">50</button>
+    <button onclick="tét100()" id="gomb100" class="gombika">100</button>
+    <button onclick="tét250()" id="gomb250" class="gombika">250</button>
+    <button onclick="tét500()" id="gomb500" class="gombika">500</button>
+</center>
+    <br><br><br>
 
     <center>
+        <div class="ballos">Egyenleg</div>
+        <div class="közeppes">Bet</div>
+        <div class="jobbos">Nyeremény</div>
         <br>
-    <div id="porgeto"><button onclick="Porgetes()">Porgetes</button></div>
-<br>
-    <div id="slot"></div>    
+        <div class="ballos2" id="egyenleg">0</div>
+        <div class="közeppes2" id="ossztet">0</div>
+        <div class="jobbos2" id="winner">0</div>
     </center>
+        
+
+
+
 </body>
 </html>
 
