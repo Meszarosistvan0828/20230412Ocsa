@@ -269,21 +269,34 @@ function Porgetes()
         nyeremeny = szamsor[poz];
         document.getElementById("slot").innerHTML = '<img class="szamostema" src=porgetszam/'+nyeremeny+'.png>';
         meddigmenjen--;
-        console.log(meddigmenjen)
 
         if (meddigmenjen == 0)
         {   
-            nyeremeny=0;
+        nyeremeny=10;
         document.getElementById("slot").innerHTML = '<img class="nyertestema" src=porgetszam/'+nyeremeny+'.png>';
         document.getElementById("sz"+nyeremeny).style.border= "5px solid gold"
         clearInterval(idozito)
         document.getElementById("porgeto").innerHTML = "<button onclick='Porgetes()'>Pörgetés</button>"
+        winner += tet[nyeremeny]*36
+    if(nyeremeny>0 && nyeremeny<13)
+    {
+        winner+=tet[37]*3
+    }
+    
+    if(nyeremeny>12 && nyeremeny<25)
+    {
+        winner+=tet[38]*3
+    }
+
+    if(nyeremeny>24 && nyeremeny<37)
+    {
+        winner+=tet[39]*3
+    
+    }
+    console.log(winner)
         }
+        console.log(nyeremeny)
     },100)
-    nyeremeny=elozotakaritas
-    console.log(tet[nyeremeny])
-    winner=tet[nyeremeny]*36
-    alert(winner)
     
 }
 
