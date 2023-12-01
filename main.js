@@ -2,11 +2,19 @@
 var tét = 1000
 var katt = 0;
 var nulatet = 0
-var egyenleg = 10000
-
+var egyenleg = 100000
+var winner = 0;
 function betolto()
 { egyenlegfrissito = setInterval(() => {
         document.getElementById("egyenleg").innerHTML = egyenleg
+    }, 10);
+    ossztetfrissito = setInterval(() => {
+    var ossztet = 0;
+    for(var i=0;i<tet.length;i++)
+    {
+    ossztet+=tet[i]
+    }
+    document.getElementById("ossztet").innerHTML = ossztet 
     }, 10);
 }
 
@@ -84,7 +92,7 @@ function tét500()
     document.getElementById("gomb250").style.backgroundColor = "white"
     document.getElementById("gomb500").style.backgroundColor = "yellowgreen"
 }
-tet = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+tet = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 function Katt(x)
 {   
@@ -105,9 +113,32 @@ function Katt(x)
             }
             if(x==39)
             {
-                document.getElementById("sz38").innerHTML ="3st 12"
+                document.getElementById("sz39").innerHTML ="3st 12"
             }
-
+            if(x==40)
+            {
+                document.getElementById("sz40").innerHTML ="1-18"
+            }
+            if(x==41)
+            {
+                document.getElementById("sz41").innerHTML ="Even"
+            }
+            if(x==42)
+            {
+                document.getElementById("sz42").innerHTML =""
+            }
+            if(x==43)
+            {
+                document.getElementById("sz43").innerHTML =""
+            }
+            if(x==44)
+            {
+                document.getElementById("sz44").innerHTML ="Odd"
+            }
+            if(x==45)
+            {
+                document.getElementById("sz45").innerHTML ="19-36"
+            }
             egyenleg+=tet[x]
             tet[x]=0
             document.getElementById("egyenleg").innerHTML = egyenleg
@@ -176,9 +207,10 @@ var nyeremeny = 0;
 var idozito = null;
 var idozito2 = null;
 elozotakaritas = 0;
+
 function Porgetes()
 {
-
+    
     document.getElementById("porgeto").innerHTML = ""
     document.getElementById("sz"+nyeremeny).style.border = "1px solid white"
 
@@ -211,12 +243,6 @@ function Porgetes()
             egyenleg+=tet[39]*3
         }
 
-
-
-
-
-
-
         for (var i = 0; i < 40; i++) 
         {   
                 document.getElementById("sz"+i).innerHTML = i    
@@ -236,10 +262,7 @@ function Porgetes()
         }
         document.getElementById("egyenleg").innerHTML = egyenleg
         clearInterval(idozito2)
-        
-        console.log(egyenleg)
-    }
-    
+    }    
 }, 100);
     idozito = setInterval(()=>{
         let poz = Math.floor(Math.random()*szamsor.length);
@@ -250,19 +273,19 @@ function Porgetes()
 
         if (meddigmenjen == 0)
         {   
+            nyeremeny=0;
         document.getElementById("slot").innerHTML = '<img class="nyertestema" src=porgetszam/'+nyeremeny+'.png>';
         document.getElementById("sz"+nyeremeny).style.border= "5px solid gold"
         clearInterval(idozito)
         document.getElementById("porgeto").innerHTML = "<button onclick='Porgetes()'>Pörgetés</button>"
-        
-      
         }
-       
     },100)
     nyeremeny=elozotakaritas
-
+    console.log(tet[nyeremeny])
+    winner=tet[nyeremeny]*36
+    alert(winner)
+    
 }
-
 
 
 
