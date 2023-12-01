@@ -210,7 +210,8 @@ elozotakaritas = 0;
 
 function Porgetes()
 {
-    
+    document.getElementById("winner").innerHTML =""
+    winner=0
     document.getElementById("porgeto").innerHTML = ""
     document.getElementById("sz"+nyeremeny).style.border = "1px solid white"
 
@@ -227,23 +228,7 @@ function Porgetes()
             setTimeout(()=> {alert("a nyereménye:"+tet[parseInt(nyeremeny)]*36)
             egyenleg+= tet[parseInt(nyeremeny)]*36},500)
         }
-
-        if(nyeremeny>0 && nyeremeny<13)
-        {
-            egyenleg+=tet[37]*3
-        }
-        
-        if(nyeremeny>12 && nyeremeny<25)
-        {
-            egyenleg+=tet[38]*3
-        }
-
-        if(nyeremeny>24 && nyeremeny<37)
-        {
-            egyenleg+=tet[39]*3
-        }
-
-        for (var i = 0; i < 40; i++) 
+        for (var i = 0; i < 46; i++) 
         {   
                 document.getElementById("sz"+i).innerHTML = i    
                 tet[i]=0
@@ -259,8 +244,31 @@ function Porgetes()
                 {
                     document.getElementById("sz39").innerHTML ="3st 12"
                 }
+                if(i==40)
+                {
+                    document.getElementById("sz40").innerHTML="1-18"
+                }
+                if(i==41)
+                {
+                    document.getElementById("sz41").innerHTML="Even"
+                }
+                if(i==42)
+                {
+                    document.getElementById("sz42").innerHTML=""
+                }
+                if(i==43)
+                {
+                    document.getElementById("sz43").innerHTML=""
+                }
+                if(i==44)
+                {
+                    document.getElementById("sz44").innerHTML="Odd"
+                }              
+                if(i==45)
+                {
+                    document.getElementById("sz45").innerHTML="19-36"
+                }
         }
-        document.getElementById("egyenleg").innerHTML = egyenleg
         clearInterval(idozito2)
     }    
 }, 100);
@@ -293,9 +301,38 @@ function Porgetes()
         winner+=tet[39]*3
     
     }
-    console.log(winner)
+    if(nyeremeny>0 && nyeremeny<19)
+    {
+        winner+=tet[40]*2
+    }
+    
+    if(nyeremeny>19 && 37>nyeremeny)
+    {
+        winner+=tet[45]*2
+    }
+    if(nyeremeny!=0)
+    {
+        if(nyeremeny%2==0)
+        {
+            winner+=tet[41]*2
         }
-        console.log(nyeremeny)
+        if(nyeremeny%2==0)
+        {
+            winner+=tet[42]*2
+        }
+    }
+    if(nyeremeny%2!=0)
+    {    
+        winner+=tet[43]*2
+    }
+    if(nyeremeny%2!=0)
+    {    
+        winner+=tet[44]*2
+    }
+    document.getElementById("winner").innerHTML = "A nyereménye "+winner
+    console.log(winner)
+    console.log(tet)
+        }
     },100)
     
 }
