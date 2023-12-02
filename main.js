@@ -214,6 +214,8 @@ function Porgetes()
     document.getElementById("porgeto").innerHTML = ""
     document.getElementById("sz"+nyeremeny).style.border = "1px solid white"
 
+    ossztet = 0;
+    winner = 0;
     meddigmenjen = Math.floor(Math.random()*50)+10;
     idozito2=setInterval(() => {
     if(meddigmenjen == 0)
@@ -245,8 +247,7 @@ function Porgetes()
 
         for (var i = 0; i < 40; i++) 
         {   
-                document.getElementById("sz"+i).innerHTML = i    
-                tet[i]=0
+                
                 if(i==37)
                 {
                     document.getElementById("sz37").innerHTML ="1st 12"
@@ -267,17 +268,19 @@ function Porgetes()
     idozito = setInterval(()=>{
         let poz = Math.floor(Math.random()*szamsor.length);
         nyeremeny = szamsor[poz];
-        document.getElementById("slot").innerHTML = '<img class="szamostema" src=porgetszam/'+nyeremeny+'.png>';
+        document.getElementById("slot").innerHTML = '<img class="szamostema" src=porgetosdi/'+nyeremeny+'.png>';
         meddigmenjen--;
 
         if (meddigmenjen == 0)
         {   
         nyeremeny=10;
-        document.getElementById("slot").innerHTML = '<img class="nyertestema" src=porgetszam/'+nyeremeny+'.png>';
+        document.getElementById("slot").innerHTML = '<img class="nyertestema" src=porgetosdi/'+nyeremeny+'.png>';
         document.getElementById("sz"+nyeremeny).style.border= "5px solid gold"
         clearInterval(idozito)
         document.getElementById("porgeto").innerHTML = "<button onclick='Porgetes()'>Pörgetés</button>"
-        winner += tet[nyeremeny]*36
+        
+
+    console.log(winner += (tet[parseInt(nyeremeny)]*36))
     if(nyeremeny>0 && nyeremeny<13)
     {
         winner+=tet[37]*3
@@ -294,11 +297,15 @@ function Porgetes()
     
     }
     console.log(winner)
+    egyenleg+=winner
+    for(var x = 0;x<=50;x++)
+    {tet[x]=0}
         }
         console.log(nyeremeny)
+
     },100)
-    
-}
+
+}   
 
 
 
