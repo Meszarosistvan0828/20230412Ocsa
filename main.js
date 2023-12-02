@@ -237,12 +237,16 @@ function Porgetes()
     {
         if(tet[nyeremeny]==0)
         {
-            alert("anyereménye lófasz se")
+
         }
         else if(tet[nyeremeny]>=0)
         {
-            setTimeout(()=> {alert("a nyereménye:"+tet[parseInt(nyeremeny)]*36)
-            egyenleg+= tet[parseInt(nyeremeny)]*36},500)
+            setTimeout(()=> {
+             
+                document.getElementById("victori").innerHTML = "A nyereménye "+winner
+            
+                document.getElementById("nyeremeny").innerHTML = "A nyereménye "+winner
+            },500)
         }
         for (var i = 0; i < 46; i++) 
         {   
@@ -296,12 +300,15 @@ function Porgetes()
 
         if (meddigmenjen == 0)
         {   
-        nyeremeny=10;
         document.getElementById("slot").innerHTML = '<img class="nyertestema" src=porgetszam/'+nyeremeny+'.png>';
         document.getElementById("sz"+nyeremeny).style.border= "5px solid gold"
         clearInterval(idozito)
         document.getElementById("porgeto").innerHTML = "<button onclick='Porgetes()'>Pörgetés</button>"
-        winner += tet[nyeremeny]*36
+    
+    console.log(tet)
+        }
+    },100)
+    winner += tet[nyeremeny]*36
     if(nyeremeny>0 && nyeremeny<13)
     {
         winner+=tet[37]*3
@@ -345,12 +352,6 @@ function Porgetes()
     {    
         winner+=tet[44]*2
     }
-    document.getElementById("winner").innerHTML = "A nyereménye "+winner
-    console.log(winner)
-    console.log(tet)
-        }
-    },100)
-    
 }
 
 
