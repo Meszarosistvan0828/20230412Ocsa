@@ -220,34 +220,9 @@ function Porgetes()
     idozito2=setInterval(() => {
     if(meddigmenjen == 0)
     {
-        if(tet[nyeremeny]==0)
-        {
-            alert("anyereménye lófasz se")
-        }
-        else if(tet[nyeremeny]>=0)
-        {
-            setTimeout(()=> {alert("a nyereménye:"+tet[parseInt(nyeremeny)]*36)
-            egyenleg+= tet[parseInt(nyeremeny)]*36},500)
-        }
-
-        if(nyeremeny>0 && nyeremeny<13)
-        {
-            egyenleg+=tet[37]*3
-        }
-        
-        if(nyeremeny>12 && nyeremeny<25)
-        {
-            egyenleg+=tet[38]*3
-        }
-
-        if(nyeremeny>24 && nyeremeny<37)
-        {
-            egyenleg+=tet[39]*3
-        }
-
-        for (var i = 0; i < 40; i++) 
+        for (var i = 0; i < 45; i++) 
         {   
-                
+                document.getElementById("sz"+i).innerHTML= i
                 if(i==37)
                 {
                     document.getElementById("sz37").innerHTML ="1st 12"
@@ -259,6 +234,33 @@ function Porgetes()
                 if(i==39)
                 {
                     document.getElementById("sz39").innerHTML ="3st 12"
+                }
+                if(i==40)
+                {
+                    document.getElementById("sz40").innerHTML ="1-18"
+                }
+                
+                if(i==41)
+                {
+                    document.getElementById("sz41").innerHTML ="Even"
+                }
+                if(i==42)
+                {
+                    document.getElementById("sz42").innerHTML =""
+                }
+                if(i==43)
+                {
+                    document.getElementById("sz43").innerHTML =""
+                }
+                
+                if(i==44)
+                {
+                    document.getElementById("sz44").innerHTML ="Odd"
+                }
+                
+                if(i==45)
+                {
+                    document.getElementById("sz45").innerHTML ="19-36"
                 }
         }
         document.getElementById("egyenleg").innerHTML = egyenleg
@@ -294,15 +296,46 @@ function Porgetes()
     if(nyeremeny>24 && nyeremeny<37)
     {
         winner+=tet[39]*3
-    
     }
+
+    if(nyeremeny>0 && nyeremeny<19)
+    {
+        winner+=tet[40]*2
+    }
+    if(nyeremeny<19&&nyeremeny>37)
+    {
+        winner+=tet[45]*2
+    }
+    if(nyeremeny!=0)
+    {
+        if(nyeremeny%2==0)
+        {
+            winner+=tet[41]*2
+        }
+        else
+        {
+            winner+=tet[44]*2
+        }
+    }
+    if(nyeremeny!=0)
+    {
+        if(nyeremeny==1 || nyeremeny==3 || nyeremeny==5 || nyeremeny==7 || nyeremeny==9 || nyeremeny==12 || nyeremeny==14 || nyeremeny==16 || nyeremeny==18 || nyeremeny==19 || nyeremeny==21 || nyeremeny==23 || nyeremeny==25 || nyeremeny==27 || nyeremeny==30 || nyeremeny==32 || nyeremeny==34 || nyeremeny==36)
+        {
+            winner+=tet[42]*2
+        }
+        else
+        {
+            winner+=tet[43]*2
+        }
+    }
+    
+
+
     console.log(winner)
     egyenleg+=winner
     for(var x = 0;x<=50;x++)
     {tet[x]=0}
         }
-        console.log(nyeremeny)
-
     },100)
 
 }   
