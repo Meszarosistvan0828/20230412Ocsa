@@ -76,10 +76,7 @@ button:hover
     border: 1px solid black;
     margin: 10px;
 }
-#levesz
-{
-    margin-right: 20px;
-}
+
 button{
     border-radius: 50px;
     color: black;
@@ -134,6 +131,17 @@ body{
     color: white;
     font-weight: bold;
 }
+
+.tavolsag
+{
+    text-align: center;
+    margin-top: 75px;
+}
+.faszántos
+{
+margin-right: 100px;
+}
+
 @keyframes mymove {
     0%   {box-shadow: 0px 0px 10px rgba(225, 255, 0, 0.5);}
     25%  {box-shadow: 0px 0px 10px rgba(225, 255, 0, 0.75);}

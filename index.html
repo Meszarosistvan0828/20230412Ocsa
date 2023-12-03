@@ -13,17 +13,12 @@
         <br>
         <h2 class="feher">TÉT</h2>
         <h2 id="nyeremenyecske"></h2>
-        <button onclick="tétlevesz()" id="levesz">X</button>
-        <button onclick="tét20()" id="gomb20">20</button>
-        <button onclick="tét50()" id="gomb50">50</button>
-        <button onclick="tét100()" id="gomb100">100</button>
-        <button onclick="tét250()" id="gomb250">250</button>
-        <button onclick="tét500()" id="gomb500">500</button>
+
         <br>
         <h2 class="feher">Egyenleg</h2>
-        <span class="feher" id="egyenleg"></span>
+   
         <br>    
-        <span id="ossztet"></span>
+
     </div>
     <table>
         <tr>
@@ -114,9 +109,44 @@
     <center>
         <br>
     <div id="porgeto"><button onclick="Porgetes()">Porgetes</button></div>
+</center>
+<div class="tavolsag">
+    <button onclick="tétlevesz()" id="levesz" class="egyenloseg">X</button>
+    <button onclick="tét20()" id="gomb20" class="egyenloseg">20</button>
+    <button onclick="tét50()" id="gomb50" class="egyenloseg">50</button>
+    <button onclick="tét100()" id="gomb100" class="egyenloseg">100</button>
+    <button onclick="tét250()" id="gomb250" class="egyenloseg">250</button>
+    <button onclick="tét500()" id="gomb500" class="egyenloseg">500</button>
+    <br><br>
+
+<div class="faszántos">
+    <div class="container">
+        <div class="row">
+    <div class="offset-md-2 col-md-3"><h2 class="feher">TÉT</h2></div>
+        <div class="col-md-3"><h2 class="feher">Bet</h2></div>
+        <div class="col-md-3"><h2 class="feher">Nyeremény</h2></div>
+        </div>
+    </div>
+</div>
+    
+
+
+
+
+    <div class="egyvonal">
+      <button class="egyseg">Egyenleg</button>
+       <button class="egyseg masodik">Bet</button> 
+        <button class="egyseg harmadik">Nyeremény</button>
 <br>
+<button class="egyseg negyedik99"><span id="egyenleg"></span></button>
+<button class="egyseg masodik" id="ossztet"></button>
+<button class="egyseg hatodik" id="winner">0</button>
+        </div>
+</div>
+<center>
     <div id="slot"></div>    
-    </center>
+</center>
+
 </body>
 </html>
 

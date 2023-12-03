@@ -339,22 +339,3 @@ function Porgetes()
     },100)
 
 }   
-
-
-
-   // for (var i = 0; i <=szamsor.length+10000;i++) {
-        //x = Math.floor(Math.random() * 37);
-       // nyerszam+=x
-      //  nyerszam+=","
-    //}
-
-    //var kezdoszam = Math.floor(Math.random() * 37);
-    //if(szamsor[kezdoszam]==0){   document.getElementById("asd123").innerHTML += "<div class='col-md-1 zero'>"+szamsor[kezdoszam]+"</div>"}
-    //else if(szamsor[kezdoszam]%2==0)
-    //{
-      //  document.getElementById("asd123").innerHTML += "<div class='col-md-1 piros'>"+szamsor[kezdoszam]+"</div>"
-    //}
-    //else
-   // {
-      //  document.getElementById("asd123").innerHTML += "<div class='col-md-1 fekete'>"+szamsor[kezdoszam]+"</div>"
-    //} 
