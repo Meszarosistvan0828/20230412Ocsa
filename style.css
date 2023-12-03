@@ -141,7 +141,30 @@ body{
 {
 margin-right: 100px;
 }
+.piros:hover{
+    background-color: violet;
+    color: black;
+    cursor: pointer;
+}
 
+.fekete:hover{
+    background-color: violet;
+    color: black;
+    cursor: pointer;
+}
+.betu:hover{
+    background-color: violet;
+    color: black;
+    cursor: pointer;
+}
+
+.egyenloseg
+{
+margin-left: 10px;
+margin-right: 10px;
+padding-left: 10px;
+padding-right: 10px;
+}
 @keyframes mymove {
     0%   {box-shadow: 0px 0px 10px rgba(225, 255, 0, 0.5);}
     25%  {box-shadow: 0px 0px 10px rgba(225, 255, 0, 0.75);}

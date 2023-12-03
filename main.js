@@ -1,4 +1,3 @@
-
 var tét = 1000
 var katt = 0;
 var nulatet = 0
@@ -210,7 +209,7 @@ elozotakaritas = 0;
 
 function Porgetes()
 {
-    
+    document.getElementById("winner").innerHTML= "0"
     document.getElementById("porgeto").innerHTML = ""
     document.getElementById("sz"+nyeremeny).style.border = "1px solid white"
 
@@ -220,7 +219,7 @@ function Porgetes()
     idozito2=setInterval(() => {
     if(meddigmenjen == 0)
     {
-        for (var i = 0; i < 45; i++) 
+        for (var i = 0; i < 46; i++) 
         {   
                 document.getElementById("sz"+i).innerHTML= i
                 if(i==37)
@@ -275,7 +274,6 @@ function Porgetes()
 
         if (meddigmenjen == 0)
         {   
-        nyeremeny=10;
         document.getElementById("slot").innerHTML = '<img class="nyertestema" src=porgetosdi/'+nyeremeny+'.png>';
         document.getElementById("sz"+nyeremeny).style.border= "5px solid gold"
         clearInterval(idozito)
@@ -329,7 +327,7 @@ function Porgetes()
         }
     }
     
-
+document.getElementById("winner").innerHTML = winner
 
     console.log(winner)
     egyenleg+=winner
