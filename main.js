@@ -209,6 +209,8 @@ elozotakaritas = 0;
 
 function Porgetes()
 {
+    
+    document.getElementById("slot").style.height = 100
     document.getElementById("winner").innerHTML= "0"
     document.getElementById("porgeto").innerHTML = ""
     document.getElementById("sz"+nyeremeny).style.border = "1px solid white"
@@ -278,8 +280,6 @@ function Porgetes()
         document.getElementById("sz"+nyeremeny).style.border= "5px solid gold"
         clearInterval(idozito)
         document.getElementById("porgeto").innerHTML = "<button onclick='Porgetes()'>Pörgetés</button>"
-        
-
     console.log(winner += (tet[parseInt(nyeremeny)]*36))
     if(nyeremeny>0 && nyeremeny<13)
     {
@@ -335,5 +335,4 @@ document.getElementById("winner").innerHTML = winner
     {tet[x]=0}
         }
     },100)
-
 }   
